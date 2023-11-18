@@ -9,14 +9,13 @@ services:
       - postgres-db:/var/lib/postgresql/data
     networks:
       - postgres-net
-      
+
   pgAdmin:
     container_name: pgAdmin
     image: dpage/pgadmin4:6.17
     environment:
-      PGADMIN_DEFAULT_EMAIL:
-
-        PGADMIN_DEFAULT_PASSWORD: 123456
+      - PGADMIN_DEFAULT_PASSWORD=123456
+      - PGADMIN_DEFAULT_EMAIL=superman@google.com
     ports:
         - 8080:80
     networks:
